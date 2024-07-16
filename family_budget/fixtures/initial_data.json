@@ -22,8 +22,6 @@
         }
     },
     {
-<<<<<<< Updated upstream
-=======
         "model": "auth.user",
         "pk": 3,
         "fields": {
@@ -35,7 +33,6 @@
         }
     },
     {
->>>>>>> Stashed changes
         "model": "family_budget.category",
         "pk": 1,
         "fields": {
@@ -52,8 +49,6 @@
         }
     },
     {
-<<<<<<< Updated upstream
-=======
         "model": "family_budget.category",
         "pk": 3,
         "fields": {
@@ -70,7 +65,6 @@
         }
     },
     {
->>>>>>> Stashed changes
         "model": "family_budget.budget",
         "pk": 1,
         "fields": {
@@ -80,8 +74,6 @@
         }
     },
     {
-<<<<<<< Updated upstream
-=======
         "model": "family_budget.budget",
         "pk": 2,
         "fields": {
@@ -100,7 +92,6 @@
         }
     },
     {
->>>>>>> Stashed changes
         "model": "family_budget.income",
         "pk": 1,
         "fields": {
@@ -111,8 +102,6 @@
         }
     },
     {
-<<<<<<< Updated upstream
-=======
         "model": "family_budget.income",
         "pk": 2,
         "fields": {
@@ -133,7 +122,6 @@
         }
     },
     {
->>>>>>> Stashed changes
         "model": "family_budget.expense",
         "pk": 1,
         "fields": {
