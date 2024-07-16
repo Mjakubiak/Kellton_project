@@ -1,0 +1,67 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "user1",
+            "password": "user1pass",
+            "is_superuser": false,
+            "is_staff": false
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "user2",
+            "password": "user2pass",
+            "is_superuser": false,
+            "is_staff": false
+        }
+    },
+    {
+        "model": "budget.category",
+        "pk": 1,
+        "fields": {
+            "name": "Salary",
+            "user": 1
+        }
+    },
+    {
+        "model": "budget.category",
+        "pk": 2,
+        "fields": {
+            "name": "Groceries",
+            "user": 1
+        }
+    },
+    {
+        "model": "budget.budget",
+        "pk": 1,
+        "fields": {
+            "name": "Monthly Budget",
+            "owner": 1,
+            "shared_with": [2]
+        }
+    },
+    {
+        "model": "budget.income",
+        "pk": 1,
+        "fields": {
+            "budget": 1,
+            "category": 1,
+            "amount": "3000.00",
+            "date": "2024-07-16"
+        }
+    },
+    {
+        "model": "budget.expense",
+        "pk": 1,
+        "fields": {
+            "budget": 1,
+            "category": 2,
+            "amount": "500.00",
+            "date": "2024-07-16"
+        }
+    }
+]
