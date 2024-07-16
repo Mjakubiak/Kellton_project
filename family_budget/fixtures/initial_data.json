@@ -20,7 +20,7 @@
         }
     },
     {
-        "model": "budget.category",
+        "model": "family_budget.category",
         "pk": 1,
         "fields": {
             "name": "Salary",
@@ -28,7 +28,7 @@
         }
     },
     {
-        "model": "budget.category",
+        "model": "family_budget.category",
         "pk": 2,
         "fields": {
             "name": "Groceries",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "model": "budget.budget",
+        "model": "family_budget.budget",
         "pk": 1,
         "fields": {
             "name": "Monthly Budget",
@@ -45,7 +45,7 @@
         }
     },
     {
-        "model": "budget.income",
+        "model": "family_budget.income",
         "pk": 1,
         "fields": {
             "budget": 1,
@@ -55,7 +55,7 @@
         }
     },
     {
-        "model": "budget.expense",
+        "model": "family_budget.expense",
         "pk": 1,
         "fields": {
             "budget": 1,
