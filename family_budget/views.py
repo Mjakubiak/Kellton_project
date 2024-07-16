@@ -1,4 +1,5 @@
 from rest_framework import viewsets, permissions
+from django_filters import rest_framework as filters
 from .models import Budget, Income, Expense, Category
 from .serializers import (
     BudgetSerializer,
@@ -8,10 +9,18 @@ from .serializers import (
 )
 
 
+class BudgetFilter(filters.FilterSet):
+    class Meta:
+        model = Budget
+        fields = ["name", "owner"]
+
+
 class BudgetViewSet(viewsets.ModelViewSet):
     queryset = Budget.objects.all()
     serializer_class = BudgetSerializer
     permission_classes = [permissions.IsAuthenticated]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = BudgetFilter
 
     def get_queryset(self):
         return Budget.objects.filter(owner=self.request.user) | Budget.objects.filter(
