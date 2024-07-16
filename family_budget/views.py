@@ -1,7 +1,10 @@
 from rest_framework import viewsets, permissions
-from .models import Budget
+from .models import Budget, Income, Expense, Category
 from .serializers import (
     BudgetSerializer,
+    IncomeSerializer,
+    ExpenseSerializer,
+    CategorySerializer,
 )
 
 
@@ -17,3 +20,29 @@ class BudgetViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+
+class IncomeViewSet(viewsets.ModelViewSet):
+    serializer_class = IncomeSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Income.objects.filter(
+            budget__owner=self.request.user
+        ) | Income.objects.filter(budget__shared_with=self.request.user)
+
+
+class ExpenseViewSet(viewsets.ModelViewSet):
+    serializer_class = ExpenseSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Expense.objects.filter(
+            budget__owner=self.request.user
+        ) | Expense.objects.filter(budget__shared_with=self.request.user)
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    permission_classes = [permissions.IsAuthenticated]
