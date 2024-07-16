@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "family_budget.apps.FamilyBudgetConfig",
     "rest_framework",
+    "django_filters",
 ]
 
 MIDDLEWARE = [

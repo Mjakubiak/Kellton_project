@@ -4,9 +4,10 @@
         "pk": 1,
         "fields": {
             "username": "user1",
-            "password": "user1pass",
+            "password": "pbkdf2_sha256$720000$aCVtznpV5NERpiabACaQWx$U+ZTA6UlwZOyuLVLQmP5Ej+X1OxOjY6KVWYTUxsVxo8=",
             "is_superuser": false,
-            "is_staff": false
+            "is_staff": false,
+            "is_active": true
         }
     },
     {
@@ -14,12 +15,27 @@
         "pk": 2,
         "fields": {
             "username": "user2",
-            "password": "user2pass",
+            "password": "pbkdf2_sha256$720000$FPxjK3Sr0uhVCDkJxiWruL$TEMcn5VDDzIRifdTQsm2I3eIQLSzRLV2URL9Mak+tlc=",
             "is_superuser": false,
-            "is_staff": false
+            "is_staff": false,
+            "is_active": true
         }
     },
     {
+<<<<<<< Updated upstream
+=======
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "user3",
+            "password": "pbkdf2_sha256$720000$FF69UQMUtk4hdQNMD6SOod$y0+w5O2x1ghhozRsi9JhEkQxoZIylDXaj5LSwEnEJdM=",
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+>>>>>>> Stashed changes
         "model": "family_budget.category",
         "pk": 1,
         "fields": {
@@ -36,15 +52,55 @@
         }
     },
     {
+<<<<<<< Updated upstream
+=======
+        "model": "family_budget.category",
+        "pk": 3,
+        "fields": {
+            "name": "Entertainment",
+            "user": 2
+        }
+    },
+    {
+        "model": "family_budget.category",
+        "pk": 4,
+        "fields": {
+            "name": "Rent",
+            "user": 2
+        }
+    },
+    {
+>>>>>>> Stashed changes
         "model": "family_budget.budget",
         "pk": 1,
         "fields": {
             "name": "Monthly Budget",
             "owner": 1,
-            "shared_with": [2]
+            "shared_with": [2, 3]
         }
     },
     {
+<<<<<<< Updated upstream
+=======
+        "model": "family_budget.budget",
+        "pk": 2,
+        "fields": {
+            "name": "Vacation Budget",
+            "owner": 2,
+            "shared_with": [1]
+        }
+    },
+    {
+        "model": "family_budget.budget",
+        "pk": 3,
+        "fields": {
+            "name": "Annual Budget",
+            "owner": 3,
+            "shared_with": []
+        }
+    },
+    {
+>>>>>>> Stashed changes
         "model": "family_budget.income",
         "pk": 1,
         "fields": {
@@ -55,6 +111,29 @@
         }
     },
     {
+<<<<<<< Updated upstream
+=======
+        "model": "family_budget.income",
+        "pk": 2,
+        "fields": {
+            "budget": 2,
+            "category": 3,
+            "amount": "500.00",
+            "date": "2024-07-16"
+        }
+    },
+    {
+        "model": "family_budget.income",
+        "pk": 3,
+        "fields": {
+            "budget": 3,
+            "category": 1,
+            "amount": "40000.00",
+            "date": "2024-07-16"
+        }
+    },
+    {
+>>>>>>> Stashed changes
         "model": "family_budget.expense",
         "pk": 1,
         "fields": {
@@ -62,6 +141,26 @@
             "category": 2,
             "amount": "500.00",
             "date": "2024-07-16"
+        }
+    },
+    {
+        "model": "family_budget.expense",
+        "pk": 2,
+        "fields": {
+            "budget": 2,
+            "category": 4,
+            "amount": "200.00",
+            "date": "2024-07-16"
+        }
+    },
+    {
+        "model": "family_budget.expense",
+        "pk": 3,
+        "fields": {
+            "budget": 3,
+            "category": 4,
+            "amount": "12000.00",
+            "date": "2024-02-05"
         }
     }
 ]

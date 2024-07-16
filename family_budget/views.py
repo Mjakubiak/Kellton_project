@@ -1,5 +1,5 @@
 from rest_framework import viewsets, permissions
-from django_filters import rest_framework as filters
+from django_filters import rest_framework as filters, CharFilter
 from .models import Budget, Income, Expense, Category
 from .serializers import (
     BudgetSerializer,
@@ -10,6 +10,8 @@ from .serializers import (
 
 
 class BudgetFilter(filters.FilterSet):
+    name = CharFilter(lookup_expr="icontains")
+
     class Meta:
         model = Budget
         fields = ["name", "owner"]
