@@ -42,7 +42,7 @@ password: user3pass
 ```
 Go to this page to log in:
 ```
-http://localhost:8000/api-login/login/
+http://localhost:8000/api-auth/login/
 ```
 Then you can access the api:
 ```
