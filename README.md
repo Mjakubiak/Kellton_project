@@ -31,7 +31,16 @@ This command will:
     Run tests.
 
 ### 3. Access the Application
-To use it as a user you have to log in first:
+To use it as a user you have to log in first. You can use user credentials from fixtures:
+```
+username: user1
+password: user1pass
+username: user2
+password: user2pass
+username: user3
+password: user3pass
+```
+Go to this page to log in:
 ```
 http://localhost:8000/api-login/login/
 ```
