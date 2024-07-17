@@ -10,13 +10,15 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+
     class Meta:
         model = Category
         fields = ["id", "name", "user"]
 
 
 class IncomeSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
 
     class Meta:
         model = Income
@@ -24,11 +26,15 @@ class IncomeSerializer(serializers.ModelSerializer):
 
 
 class ExpenseSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
 
     class Meta:
         model = Expense
         fields = ["id", "budget", "category", "amount", "date"]
+
+
+class BudgetShareSerializer(serializers.Serializer):
+    shared_with = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
 
 
 class BudgetSerializer(serializers.ModelSerializer):
